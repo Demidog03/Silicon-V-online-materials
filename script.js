@@ -722,3 +722,143 @@
 //     //0 1 2 3 4
 //     console.log(`Индексу ${i} соответствует цифра ${numbers[i]}`); //numbers[1]
 // }
+
+
+/**ARRAYS ADVANCED */
+
+// Определить массив, например let arr = [5, 4, 3, 8, 0];
+// Создать функцию filterFor(arr, a). 
+// Функция должна вернуть новый массив из элементов arr, 
+// но в нем должны содержаться элементы, которые больше или равны
+// (>=) значения переменной a.
+// Например, запуск функции filterFor(arr, 5) дает результат [5,8]
+// запуск функции filterFor(arr, 10) дает результат []
+// запуск функции filterFor(arr, 3.11) дает результат [4,5,8]
+
+
+//MUTABLE - мутабельный (изменяемый)
+// let arr = [1, 2, 3]
+// arr = [2, 3]
+// console.log(arr);
+
+//IMMUTABLE - не мутабельный (неизменямый)
+// const arr = [1, 2, 3]
+// const arrClone = [...arr] //диструктуризация
+// arrClone.shift()
+// console.log(arr);
+// console.log(arrClone);
+
+// function filterFor(funcArr, a){
+//     const newArr = [] //пустой массив
+//     // for (const value of funcArr) { //цикл для массиво (цикл элементов)
+//     //     if(value >= a){ //элемент >= переменнай a
+//     //         newArr.push(value) //если условие подходит то в пустой массив добавляем элемент
+//     //     }
+//     // }
+
+//     //callback - функция внутри параметров
+
+//     funcArr.forEach(function (value) {
+//         if(value >= a){
+//             newArr.push(value)
+//         }
+//     })
+//     return newArr
+// }
+
+// const newArr1 = filterFor([5, 4, 3, 8, 0], 5) //const newArr1 = newArr
+// const newArr2 = filterFor([7, 9, 1, 4, 2], 3) //const newArr1 = newArr
+// console.log(newArr1);
+// console.log(newArr2);
+
+//2
+// вернуть новый массив с обновленными данными - квадраты всех чисел
+// const arr = [2, 5, 7, 1, 3]
+// const newArr = [4, 25, 49, 1, 9]
+
+// если кол-во элементов не меняется - размер массива
+// const arr = [2, 5, 7, 1, 3]
+// const newArr = arr.map(function (element) { //создаст новый массив
+//     return value*2
+// })
+// console.log(newArr);
+
+
+//Улучшенная версия с помощью анонимной стрелочной функции
+// const arr = [2, 5, 7, 1, 3]
+// const newArr = arr.map((element) => element ** 2 ) //создаст новый массив
+ 
+// console.log(newArr);
+
+// //() => value //() => {return value}
+
+
+//MAP и ТЕРНАРНЫЙ ОПЕРАТОР
+//MAP не меняет размер массива
+// const arr = [2, 5, 7, 6, 3]
+
+//1
+// const newArr = arr.map((element) => {
+//     if(element % 2 === 0){
+//         return element ** 2
+//     }
+//     else {
+//         return null
+//     }
+// } ) 
+
+//2
+//`` - обратные кавычки
+// const newArr = arr.map((element) => (element % 2 === 0) ? element ** 2 : null ) 
+// console.log(newArr);
+
+//STRING IS ARRAY?
+// console.log(new String("hello"));
+
+// const name = "Katya"
+// console.log(name[0]);
+
+// 1
+// Напишите функцию ucFirst(str), возвращающую строку str с заглавным первым символом.
+// Вам понадобятся методы строк.
+// uppercase - заглавная буква
+
+// ucFirst("hello")
+// "Hello"
+
+// function ucFirst(str){
+//     const firstLetter = str[0].toUpperCase()
+//     // console.log(str.slice(1, 3));
+//     // //1 index = 2 буква, 2 index = 3 буква
+
+//     const slicedText = str.slice(1)
+//     return firstLetter + slicedText
+// }
+
+// const uppercaseText1 = ucFirst("hello")
+// const uppercaseText2 = ucFirst("dossym")
+// console.log(uppercaseText1);
+// console.log(uppercaseText2);
+
+
+// 2
+// Напишите функцию checkSpam(str), возвращающую true, если str содержит 'badWord' или 'XXX', а иначе false.
+// Функция должна быть нечувствительна к регистру.
+
+//Привет Инкар BaDWorD = true
+
+function checkSpam(str){
+    const lowercaseStr = str.toLowerCase()
+    //"привет инкар badword"
+    if(lowercaseStr.includes("badword") || lowercaseStr.includes("xxx")){
+        return true
+    }
+    else{
+        return false
+    }
+}
+
+
+// const arr = [1, 2, 3]
+// console.log(arr.includes(2));
+console.log(checkSpam("Привет Инкар XXX"));
