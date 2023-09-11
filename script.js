@@ -847,18 +847,69 @@
 
 //Привет Инкар BaDWorD = true
 
-function checkSpam(str){
-    const lowercaseStr = str.toLowerCase()
-    //"привет инкар badword"
-    if(lowercaseStr.includes("badword") || lowercaseStr.includes("xxx")){
-        return true
-    }
-    else{
-        return false
-    }
-}
+// function checkSpam(str){
+//     const lowercaseStr = str.toLowerCase()
+//     //"привет инкар badword"
+//     if(lowercaseStr.includes("badword") || lowercaseStr.includes("xxx")){
+//         return true
+//     }
+//     else{
+//         return false
+//     }
+// }
 
 
-// const arr = [1, 2, 3]
-// console.log(arr.includes(2));
-console.log(checkSpam("Привет Инкар XXX"));
+// // const arr = [1, 2, 3]
+// // console.log(arr.includes(2));
+// console.log(checkSpam("Привет Инкар XXX"));
+
+// Number("5") //5
+// parseFloat("5") //5
+
+// Number('3') //3
+// Number('3s') //NaN
+
+
+//FILTER AND FIND
+// const names = ["Max", "Inkar", "Dossym", "Nur", "Katya", "Inkar"]
+// let isFound = false
+
+// names.forEach(name => {
+//     if(name === "Dossym"){
+//         isFound = true
+//     }
+// })
+
+// console.log(isFound);
+
+// //FIND
+// const foundPerson = names.find(name => name === "Dossym") //implicit return
+// console.log(foundPerson);
+
+// //FILTER
+// const foundPeople = names.filter(name => name === "Inkar")
+// console.log(foundPeople);
+
+// const residents = [
+//     {
+//         name: 'Inkar',
+//         address: 'Astana'
+//     },
+//     {
+//         name: 'Katya',
+//         address: 'Astana'
+//     },
+//     {
+//         name: 'Inkar',
+//         address: 'Aktau'
+//     },
+//     {
+//         name: 'Nur',
+//         address: 'Almaty'
+//     }
+// ]
+
+// const allInkars = residents.filter(resident => resident.name === "Inkar")
+// const allAstanaResidents = residents.filter(resident => resident.address === "Astana")
+// console.log(allInkars);
+// console.log(allAstanaResidents);
